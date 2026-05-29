@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pritam | Services & Projects</title>
     <meta name="description" content="Explore my collection of interactive projects and services including 2048 game, countdown timer, portfolio, HMS, and shopping platform.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -13,20 +14,20 @@
         }
 
         :root {
-            --primary: #8b5cf6;
-            --secondary: #10b981;
-            --accent: #f59e0b;
-            --tertiary: #ef4444;
-            --dark-bg: #0f172a;
-            --card-bg: #1e293b;
+            --primary: #7c5cff;
+            --secondary: #22d3ee;
+            --accent: #fb7185;
+            --tertiary: #f472b6;
+            --dark-bg: #080b1a;
+            --card-bg: #141a33;
             --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --border: #334155;
+            --text-secondary: #c2c9e0;
+            --border: #2a3357;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f3a 100%);
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #11163a 100%);
             color: var(--text-primary);
             overflow-x: hidden;
             min-height: 100vh;
@@ -145,8 +146,8 @@
         }
 
         @keyframes titleGlow {
-            0%, 100% { text-shadow: 0 0 20px rgba(139, 92, 246, 0.3), 0 0 40px rgba(16, 185, 129, 0.2); }
-            50% { text-shadow: 0 0 30px rgba(139, 92, 246, 0.6), 0 0 60px rgba(16, 185, 129, 0.4); }
+            0%, 100% { text-shadow: 0 0 20px rgba(124, 92, 255, 0.35), 0 0 40px rgba(34, 211, 238, 0.2); }
+            50% { text-shadow: 0 0 30px rgba(124, 92, 255, 0.65), 0 0 60px rgba(34, 211, 238, 0.45); }
         }
 
         .subtitle {
@@ -209,8 +210,8 @@
         .service-card {
             position: relative;
             padding: 35px;
-            background: rgba(30, 41, 59, 0.5);
-            border: 1.5px solid rgba(0, 212, 255, 0.15);
+            background: rgba(20, 26, 51, 0.55);
+            border: 1.5px solid rgba(124, 92, 255, 0.18);
             border-radius: 20px;
             backdrop-filter: blur(15px);
             cursor: pointer;
@@ -220,7 +221,7 @@
             overflow: hidden;
             animation: scaleIn 0.6s ease-out;
             animation-fill-mode: both;
-            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px rgba(124, 92, 255, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.05);
         }
 
         .service-card:nth-child(1) { animation-delay: 0.6s; }
@@ -261,7 +262,7 @@
             position: absolute;
             inset: 0;
             border-radius: 20px;
-            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(139, 92, 246, 0.1) 0%, transparent 80%);
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(124, 92, 255, 0.1) 0%, transparent 80%);
             opacity: 0;
             transition: opacity 0.3s ease;
             pointer-events: none;
@@ -275,7 +276,7 @@
             border-color: var(--primary);
             background: rgba(30, 41, 59, 0.8);
             transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 30px 60px rgba(139, 92, 246, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 30px 60px rgba(124, 92, 255, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.1);
         }
 
         .service-card:active {
@@ -283,10 +284,26 @@
         }
 
         .card-icon {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            display: inline-block;
-            animation: bounce 2s ease-in-out infinite, spin 6s linear infinite;
+            font-size: 2.6rem;
+            width: 78px;
+            height: 78px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(124, 92, 255, 0.25), rgba(34, 211, 238, 0.12));
+            border: 1px solid rgba(124, 92, 255, 0.35);
+            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.12), 0 8px 24px rgba(124, 92, 255, 0.15);
+            animation: bounce 3s ease-in-out infinite;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover .card-icon {
+            background: linear-gradient(135deg, rgba(124, 92, 255, 0.45), rgba(251, 113, 133, 0.25));
+            border-color: var(--primary);
+            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2), 0 12px 30px rgba(124, 92, 255, 0.4);
+            transform: translateY(-4px) scale(1.05);
         }
 
         .service-card:nth-child(1) .card-icon { animation-delay: 0s; }
@@ -299,23 +316,6 @@
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-15px); }
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg) translateY(0); }
-            50% { transform: rotate(5deg) translateY(-15px); }
-            100% { transform: rotate(0deg) translateY(0); }
-        }
-
-        .service-card:hover .card-icon {
-            animation-play-state: paused;
-            animation: wobble 0.6s ease-in-out;
-        }
-
-        @keyframes wobble {
-            0%, 100% { transform: rotate(0); }
-            25% { transform: rotate(-10deg); }
-            75% { transform: rotate(10deg); }
         }
 
         .card-title {
@@ -345,6 +345,80 @@
             color: var(--text-primary);
         }
 
+        /* Tech tags */
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 50px;
+            color: var(--text-secondary);
+            background: rgba(124, 92, 255, 0.1);
+            border: 1px solid rgba(124, 92, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .tag {
+            color: var(--text-primary);
+            border-color: rgba(124, 92, 255, 0.5);
+            background: rgba(124, 92, 255, 0.18);
+        }
+
+        /* Top accent bar */
+        .card-accent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .service-card:hover .card-accent {
+            transform: scaleX(1);
+        }
+
+        /* Header status badge */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            margin-bottom: 22px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--secondary);
+            background: rgba(34, 211, 238, 0.1);
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            animation: fadeIn 1s ease-out 0.2s backwards;
+        }
+
+        .status-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--secondary);
+            box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.6);
+            animation: ping 2s ease-in-out infinite;
+        }
+
+        @keyframes ping {
+            0% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.6); }
+            70% { box-shadow: 0 0 0 8px rgba(34, 211, 238, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+        }
+
         .card-link {
             display: inline-block;
             padding: 12px 24px;
@@ -359,7 +433,7 @@
             text-decoration: none;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            box-shadow: 0 4px 15px rgba(124, 92, 255, 0.3);
         }
 
         .card-link::before {
@@ -379,12 +453,12 @@
 
         .card-link:hover {
             transform: translateY(-3px) scale(1.08);
-            box-shadow: 0 12px 30px rgba(139, 92, 246, 0.5);
+            box-shadow: 0 12px 30px rgba(124, 92, 255, 0.5);
         }
 
         .card-link:active {
             transform: translateY(-1px) scale(0.98);
-            box-shadow: 0 6px 15px rgba(139, 92, 246, 0.3);
+            box-shadow: 0 6px 15px rgba(124, 92, 255, 0.3);
         }
 
         /* Footer */
@@ -512,13 +586,13 @@
 
         /* Glow effect */
         .glow {
-            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            text-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
             animation: glowPulse 2s ease-in-out infinite;
         }
 
         @keyframes glowPulse {
-            0%, 100% { text-shadow: 0 0 20px rgba(139, 92, 246, 0.5); }
-            50% { text-shadow: 0 0 40px rgba(139, 92, 246, 0.8), 0 0 60px rgba(16, 185, 129, 0.6); }
+            0%, 100% { text-shadow: 0 0 20px rgba(124, 92, 255, 0.5); }
+            50% { text-shadow: 0 0 40px rgba(124, 92, 255, 0.8), 0 0 60px rgba(34, 211, 238, 0.6); }
         }
     </style>
 </head>
@@ -531,49 +605,73 @@
 
     <div class="container">
         <header>
-            <h1 class="domain-title glow">Pritam Rao</h1>
-            <p class="subtitle">Creative Developer & Designer</p>
+            <div class="status-badge"><span class="status-dot"></span> Open to opportunities</div>
+            <h1 class="domain-title glow">Pritam T</h1>
+            <p class="subtitle">Full Stack Developer · React · React Native · Node.js</p>
             <p class="description">
-                Welcome to my digital portfolio. Explore a collection of interactive projects and services 
-                showcasing my skills in game development, web design, and e-commerce solutions.
+                Welcome to my digital space. Explore production apps and projects I've built end-to-end —
+                hyperlocal delivery, cafe &amp; gym platforms, hospital management, and more.
             </p>
         </header>
 
         <section class="services-grid">
             <a href="https://github.com/T-pritam/Build_Cafe_Customer" class="service-card" target="_blank">
+                <span class="card-accent"></span>
                 <div class="card-icon">☕</div>
                 <h2 class="card-title">Build Cafe</h2>
                 <p class="card-description">
                     A 4-app cafe ordering ecosystem (customer mobile + web, staff app, backend) covering the full QR-to-delivery lifecycle — Razorpay webhooks, Firebase push, and Supabase Realtime over a 60+ endpoint Fastify API.
                 </p>
-                <span class="card-link">View Code</span>
+                <div class="card-tags">
+                    <span class="tag">React Native</span>
+                    <span class="tag">Fastify</span>
+                    <span class="tag">Razorpay</span>
+                </div>
+                <span class="card-link"><i class="fab fa-github"></i> View Code</span>
             </a>
 
             <a href="https://github.com/T-pritam/Build_GYM" class="service-card" target="_blank">
+                <span class="card-accent"></span>
                 <div class="card-icon">🏋️</div>
                 <h2 class="card-title">Build Gym</h2>
                 <p class="card-description">
                     End-to-end gym platform — digital membership, Build Coins wallet, workout tracking and a community feed, with BullMQ leaderboard workers, cron membership lifecycle, and AxTrax gate access.
                 </p>
-                <span class="card-link">View Code</span>
+                <div class="card-tags">
+                    <span class="tag">React Native</span>
+                    <span class="tag">BullMQ</span>
+                    <span class="tag">Supabase</span>
+                </div>
+                <span class="card-link"><i class="fab fa-github"></i> View Code</span>
             </a>
 
             <a href="https://kkr.pritamrao.tech" class="service-card" target="_blank">
+                <span class="card-accent"></span>
                 <div class="card-icon">🏥</div>
                 <h2 class="card-title">KKR HMS</h2>
                 <p class="card-description">
                     Hospital Management System — patient records, OPD billing, lab orders and a financial dashboard with PDF exports. Four-role RBAC enforced via middleware and Supabase RLS with JWT refresh-token rotation.
                 </p>
-                <span class="card-link">Access HMS</span>
+                <div class="card-tags">
+                    <span class="tag">Next.js</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">Supabase</span>
+                </div>
+                <span class="card-link"><i class="fas fa-arrow-up-right-from-square"></i> Access HMS</span>
             </a>
 
             <a href="https://2048.pritamrao.tech" class="service-card" target="_blank">
+                <span class="card-accent"></span>
                 <div class="card-icon">🎮</div>
                 <h2 class="card-title">2048</h2>
                 <p class="card-description">
                     A classic puzzle game where you combine tiles to reach the 2048 tile. Test your strategy and skills!
                 </p>
-                <span class="card-link">Play Game</span>
+                <div class="card-tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Game</span>
+                </div>
+                <span class="card-link"><i class="fas fa-gamepad"></i> Play Game</span>
             </a>
 
             <!-- <a href="https://countdown.pritamrao.tech" class="service-card"  target="_blank">
@@ -585,22 +683,34 @@
                 <span class="card-link">Open Timer</span>
             </a> -->
 
-            <a href="https://portfolio.pritamrao.tech" class="service-card"  target="_blank">
+            <a href="https://portfolio.pritamrao.tech/" class="service-card"  target="_blank">
+                <span class="card-accent"></span>
                 <div class="card-icon">💼</div>
                 <h2 class="card-title">Portfolio</h2>
                 <p class="card-description">
-                    Explore my complete portfolio featuring projects, skills, experience, and testimonials.
+                    Explore my complete portfolio featuring projects, skills, experience, and the full tech stack.
                 </p>
-                <span class="card-link">View Work</span>
+                <div class="card-tags">
+                    <span class="tag">Vite</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">AOS</span>
+                </div>
+                <span class="card-link"><i class="fas fa-arrow-up-right-from-square"></i> View Work</span>
             </a>
 
             <a href="https://shoperskart.pritamrao.tech" class="service-card"  target="_blank">
+                <span class="card-accent"></span>
                 <div class="card-icon">🛍️</div>
                 <h2 class="card-title">Shoperskart</h2>
                 <p class="card-description">
                     Full-featured e-commerce platform with products, cart, checkout, and payment integration.
                 </p>
-                <span class="card-link">Shop Now</span>
+                <div class="card-tags">
+                    <span class="tag">MERN</span>
+                    <span class="tag">Redux</span>
+                    <span class="tag">Tailwind</span>
+                </div>
+                <span class="card-link"><i class="fas fa-bag-shopping"></i> Shop Now</span>
             </a>
 
         </section>
